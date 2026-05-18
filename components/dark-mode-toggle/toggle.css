@@ -1,0 +1,39 @@
+/* Isolated toggle switch dimensions and styling */
+.dm-switch-container {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.dm-switch-container input {
+  opacity: 0; width: 0; height: 0;
+}
+
+.dm-slider-track {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #b3b3b3;
+  border-radius: 28px;
+  transition: background-color 0.3s;
+}
+
+.dm-slider-track:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* Actions when checked */
+#dm-theme-checkbox:checked + .dm-slider-track {
+  background-color: #10b981; /* Nice modern emerald green */
+}
+
+#dm-theme-checkbox:checked + .dm-slider-track:before {
+  transform: translateX(22px);
+}
